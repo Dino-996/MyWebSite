@@ -1,0 +1,42 @@
+<template>
+  <v-container>
+    <v-carousel height="400" hide-delimiters progress="primary" :show-arrows="false" cycle>
+      <v-carousel-item v-for="(slide, i) in slides" :key="i">
+        <v-sheet height="100%">
+          <div class="d-flex fill-height justify-center align-center">
+            <div class="text-h2">
+              <img :src="slide" alt="Carousel" width="300">
+            </div>
+          </div>
+        </v-sheet>
+      </v-carousel-item>
+      <br>
+    </v-carousel>
+  </v-container>
+</template>
+
+<script lang="ts" setup>
+import { reactive } from 'vue';
+
+const props = defineProps({
+  slideOne: { type: String, require: true },
+  slideTwo: { type: String, require: true },
+  slideThree: { type: String, require: true },
+  slideFour: { type: String, require: true },
+  slideFive: { type: String, require: true },
+  slideSix: { type: String, require: true },
+  slideSeven: { type: String, require: true },
+  slideEight: { type: String, require: true },
+});
+
+const slides = reactive([
+  props.slideOne,
+  props.slideTwo,
+  props.slideThree,
+  props.slideFour,
+  props.slideFive,
+  props.slideSix,
+  props.slideSeven,
+  props.slideEight,
+]);
+</script>

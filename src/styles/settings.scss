@@ -1,0 +1,35 @@
+@keyframes slide-in-rigth-to-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.slide-in-rigth-to-left {
+  animation: slide-in-rigth-to-left 5s;
+}
+
+@keyframes slide-in-left-to-rigth {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.slide-in-left-to-rigth {
+  animation: slide-in-left-to-rigth 5s;
+}
+
+.align-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+#block-penguin {
+  display: block !important;
+}
