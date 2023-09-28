@@ -27,19 +27,34 @@
 
   <v-navigation-drawer v-model="drawer" location="right" width="150" temporary>
     <v-container>
-      <v-list v-for="{ id, title, icon } in menus" :key="id">
-        <v-btn :prepend-icon="icon" variant="text">{{ title }}</v-btn>
+      <v-list>
+        <v-btn :prepend-icon="'mdi-home'" variant="text" v-on:click="navigator('/')">Home</v-btn>
+      </v-list>
+      <v-list>
+        <v-btn prepend-icon="mdi-account" variant="text" v-on:click="navigator('/chisono')">Chi sono</v-btn>
+      </v-list>
+      <v-list>
+        <v-btn prepend-icon="mdi-arrow-projectile" variant="text" v-on:click="navigator('/progetti')">Progetti</v-btn>
+      </v-list>
+      <v-list>
+        <v-btn prepend-icon="mdi-blog" variant="text" v-on:click="navigator('/blog')">Blog</v-btn>
+      </v-list>
+      <v-list>
+        <v-btn prepend-icon="mdi-book-open-blank-variant" variant="text"
+          v-on:click="navigator('/contatti')">Contatti</v-btn>
       </v-list>
       <v-divider />
       <br>
-      <v-btn>Scarica CV</v-btn>
+      <v-btn v-on:click="download()">Scarica CV</v-btn>
     </v-container>
   </v-navigation-drawer>
 </template>
 
 <script lang="ts" setup>
-import { Ref, ref, reactive } from 'vue';
+import { Ref, ref } from 'vue';
 import { useTheme } from 'vuetify'
+import download from '@/utils/download';
+import navigator from '@/utils/navigator';
 
 const switcher: Ref<boolean> = ref(false);
 const drawer: Ref<boolean> = ref(false);
@@ -50,18 +65,11 @@ const moon: string = 'mdi-weather-night';
 
 const theme = useTheme();
 
-const menus = reactive([
-  { id: 0, title: 'Home', icon: 'mdi-home' },
-  { id: 1, title: 'Chi sono', icon: 'mdi-account' },
-  { id: 2, title: 'Progetti', icon: 'mdi-arrow-projectile' },
-  { id: 3, title: 'Contatti', icon: 'mdi-book-open-blank-variant' },
-]);
-
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
 
-function switchIcon(value: boolean, icon_1: string, icon_2: string):string {
+function switchIcon(value: boolean, icon_1: string, icon_2: string): string {
   if (value === true) {
     return icon_1;
   }

@@ -1,0 +1,3 @@
+<template>
+  Progetti Recenti
+</template>

@@ -1,17 +1,43 @@
-const url: string = "http://sito.it";
-const auth: string = "hello";
+import firebase from "@/plugins/firebase";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-const options: object = {
-  headerd: {
-    Authorization: auth,
-  },
-};
+function download() {
+  const storage = getStorage(firebase);
+  const starsRef = ref(storage, "assets/cv.png");
 
-fetch(url, options)
-  .then((res) => res.blob())
-  .then((blob) => {
-    const file = window.URL.createObjectURL(blob);
-    window.location.assign(file);
-  });
+  getDownloadURL(starsRef)
+    .then((url) => {
+      console.log("Start download");
+      const xhr = new XMLHttpRequest();
+      xhr.responseType = "blob";
+      xhr.onload = (event) => {
+        const blob = xhr.response;
+        const a = document.createElement("a");
+        a.href = window.URL.createObjectURL(blob);
+        a.download = "cv.png";
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(a.href);
+        document.body.removeChild(a);
+      };
+      xhr.open("GET", url);
+      xhr.send();
+    })
+    .catch((error) => {
+      switch (error.code) {
+        case "storage/object-not-found":
+          break;
+        case "storage/unauthorized":
+          break;
+        case "storage/canceled":
+          break;
+        case "storage/unknown":
+          break;
+        default:
+          console.error("Errore sconosciuto durante il download:", error);
+      }
+    });
+}
 
-export default fetch;
+export default download;

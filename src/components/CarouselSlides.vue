@@ -5,7 +5,33 @@
         <v-sheet height="100%">
           <div class="d-flex fill-height justify-center align-center">
             <div class="text-h2">
-              <img :src="slide" alt="Carousel" width="300">
+              <span v-if="i === 0">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 1">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 2">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 3">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 4">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 5">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 6">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 7">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
+              <span v-if="i === 8">
+                <img :src="slide" :lazy-src="slide" alt="Carousel" width="300">
+              </span>
             </div>
           </div>
         </v-sheet>
