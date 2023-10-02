@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <p class="text-h3">{{ title }}</p>
     <v-carousel height="400" hide-delimiters progress="primary" :show-arrows="false" cycle>
       <v-carousel-item v-for="(slide, i) in slides" :key="i">
         <v-sheet height="100%">
@@ -45,6 +46,7 @@
 import { reactive } from 'vue';
 
 const props = defineProps({
+  title: {type: String, default: "Tech Stack", require: false},
   slideOne: { type: String, require: true },
   slideTwo: { type: String, require: true },
   slideThree: { type: String, require: true },

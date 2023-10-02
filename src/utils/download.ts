@@ -7,7 +7,6 @@ function download() {
 
   getDownloadURL(starsRef)
     .then((url) => {
-      console.log("Start download");
       const xhr = new XMLHttpRequest();
       xhr.responseType = "blob";
       xhr.onload = (event) => {
