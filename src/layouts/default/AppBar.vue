@@ -47,7 +47,7 @@
         </div>
         <v-divider vertical></v-divider>
         <div>
-          <v-btn rounded="lg" v-on:click="download()">Scarica CV</v-btn>
+          <v-btn rounded="lg" v-on:click="download()" prepend-icon="mdi-note-text-outline">Scarica CV</v-btn>
         </div>
       </div>
     <v-spacer></v-spacer>
@@ -82,7 +82,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Ref, ref, reactive } from 'vue';
+import { Ref, ref } from 'vue';
 import { useTheme } from 'vuetify'
 import download from '@/utils/download';
 import navigator from '@/utils/navigator';
