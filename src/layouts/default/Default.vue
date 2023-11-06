@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-  import DefaultBar from './AppBar.vue'
-  import DefaultView from './View.vue'
-  import DefaultFooter from './DefaultFooter.vue';
+import DefaultBar from "./AppBar.vue";
+import DefaultView from "./View.vue";
+import DefaultFooter from "./DefaultFooter.vue";
 </script>

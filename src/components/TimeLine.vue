@@ -1,38 +1,57 @@
 <template>
-  <v-timeline side="end" density="comfortable" line-color="grey" line-thickness="1" line-inset="5" align="start"
-    style="height: 300px;">
-
-    <v-timeline-item size="small" fill-dot :dot-color="dotColor" :icon="iconTimeline">
-
+  <v-timeline
+    side="end"
+    density="comfortable"
+    line-color="grey"
+    line-thickness="1"
+    line-inset="5"
+    align="start"
+    style="height: 300px"
+  >
+    <v-timeline-item
+      size="small"
+      fill-dot
+      :dot-color="dotColor"
+      :icon="iconTimeline"
+    >
       <div>
         <div class="text-h6">{{ title }}</div>
-        <p class="font-italic">{{ startDay }}/{{ startMonth }}/{{ startYear }} - <span v-if="isEmpty()">In corso</span>
+        <p class="font-italic">
+          {{ startDay }}/{{ startMonth }}/{{ startYear }} -
+          <span v-if="isEmpty()">In corso</span>
           <span v-else>{{ endDay }}/{{ endMonth }}/{{ endYear }}</span>
         </p>
-        <br>
+        <br />
         <p class="text-caption">
           {{ text }}
         </p>
-        <br>
+        <br />
         <div class="d-flex flex-row align-end">
           <v-icon icon="mdi-office-building-outline" /> {{ name }}
         </div>
-        <br>
-        <div class="d-flex flex-row align-start ">
+        <br />
+        <div class="d-flex flex-row align-start">
           <v-icon icon="mdi-map-marker-radius" /> {{ position }}
         </div>
       </div>
-      <br>
+      <br />
       <div>
-        <v-btn :prepend-icon="buttonImg" size="small" variant="text" rounded="xl" role="link" :href="buttonEvent"
-          target="_blank">{{ button }}</v-btn>
+        <v-btn
+          :prepend-icon="buttonImg"
+          size="small"
+          variant="text"
+          rounded="xl"
+          role="link"
+          :href="buttonEvent"
+          target="_blank"
+          >{{ button }}</v-btn
+        >
       </div>
     </v-timeline-item>
   </v-timeline>
 </template>
 
 <script lang="ts" setup>
-
 const props = defineProps({
   title: { type: String, default: "Title", require: false },
   text: { type: String, default: "Text", require: false },
@@ -48,7 +67,7 @@ const props = defineProps({
   position: { type: String, default: "posizione", requie: false },
   button: { type: String, require: false },
   buttonImg: { type: String, require: false },
-  buttonEvent: { type: String, require: false }
+  buttonEvent: { type: String, require: false },
 });
 
 function isEmpty(): boolean {
@@ -57,5 +76,4 @@ function isEmpty(): boolean {
   }
   return false;
 }
-
 </script>

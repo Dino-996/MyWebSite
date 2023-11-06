@@ -2,14 +2,14 @@ import firebase from "@/plugins/firebase";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 function download() {
-  const storage = getStorage(firebase);
+  const storage = getStorage(firebase.firebase);
   const starsRef = ref(storage, "assets/cv.png");
 
   getDownloadURL(starsRef)
     .then((url) => {
       const xhr = new XMLHttpRequest();
       xhr.responseType = "blob";
-      xhr.onload = (event) => {
+      xhr.onload = () => {
         const blob = xhr.response;
         const a = document.createElement("a");
         a.href = window.URL.createObjectURL(blob);

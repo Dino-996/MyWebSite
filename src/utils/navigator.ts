@@ -1,7 +1,7 @@
-import router from '@/router';
+import router from "@/router";
 
-function navigator(route: string): void {
-  router.push(route);
+async function navigator(route: string) {
+  await router.push(route);
 }
 
 export default navigator;
