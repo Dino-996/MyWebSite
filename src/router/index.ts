@@ -36,6 +36,11 @@ const routes = [
         name: "Articolo",
         component: () => import("@/components/Blog/Articolo.vue"),
       },
+      {
+        path: "/:pathMatch(.*)*",
+        name: "404",
+        component: () => import("@/components/PageNotFound.vue"),
+      }
     ],
   },
 ];
