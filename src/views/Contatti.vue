@@ -103,13 +103,13 @@
                         <a
                           color="yellow"
                           target="_blank"
-                          href="https://www.google.com"
+                          href="https://www.iubenda.com/privacy-policy/83244684"
                           v-bind="props"
                           @click.stop
                           >Privacy Policy</a
                         >
                       </template>
-                      Leggi l'informativa privacy
+                      Leggi l'informativa Privacy Policy
                     </v-tooltip>
                   </div>
                 </template>
@@ -151,13 +151,21 @@
 import { Ref, ref, reactive } from "vue";
 import emailjs from "@emailjs/browser";
 import router from "@/router";
+import { firebase } from "@/plugins/firebase";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+import { onMounted } from "vue";
+
+onMounted(() => {
+  appCheck();
+});
 
 let name: Ref<string> = ref("");
 let email: Ref<string> = ref("");
-const emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+let emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let checkbox: Ref<boolean> = ref(false);
 let textBox: Ref<string> = ref("");
 let success: Ref<boolean> = ref(false);
+
 const contacts = reactive([
   {
     id: 0,
@@ -250,5 +258,14 @@ function sendEmail() {
         },
       );
   }
+}
+
+function appCheck(): void {
+  initializeAppCheck(firebase, {
+    provider: new ReCaptchaV3Provider(
+      "6LdqDgspAAAAAE_ho-pzeqoqvrPAVmRZ3wkxUjzf",
+    ),
+    isTokenAutoRefreshEnabled: true,
+  });
 }
 </script>

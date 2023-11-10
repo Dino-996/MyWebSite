@@ -23,9 +23,15 @@
 
     <v-app-bar-title class="title">
       <v-avatar size="33" class="mr-1">
-        <v-img src="/src/assets/io.png" alt="avatar"></v-img>
+        <v-img
+          class="pointer"
+          @click="navigator('/')"
+          lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fio.ico?alt=media&token=798a10ec-c1b4-439e-a0a0-c788ee800ac8"
+          src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fio.ico?alt=media&token=798a10ec-c1b4-439e-a0a0-c788ee800ac8"
+          alt="avatar"
+        ></v-img>
       </v-avatar>
-      Davide Sabia
+      <span class="pointer" @click="navigator('/')">Davide Sabia</span>
     </v-app-bar-title>
     <div class="d-flex flex-row align-center" id="d-desk">
       <div class="ml-3">
@@ -79,10 +85,7 @@
       </div>
       <v-divider vertical></v-divider>
       <div>
-        <v-btn
-          rounded="xl"
-          v-on:click="download()"
-          prepend-icon="mdi-note-text-outline"
+        <v-btn rounded="xl" v-on:click="download()" prepend-icon="mdi-download"
           >Scarica CV</v-btn
         >
       </div>
@@ -137,7 +140,9 @@
       </v-list>
       <v-divider />
       <br />
-      <v-btn v-on:click="download()">Scarica CV</v-btn>
+      <v-btn variant="text" prepend-icon="mdi-download" v-on:click="download()">
+        Scarica CV</v-btn
+      >
     </v-container>
   </v-navigation-drawer>
 </template>
