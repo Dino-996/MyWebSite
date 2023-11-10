@@ -40,7 +40,7 @@ const routes = [
         path: "/:pathMatch(.*)*",
         name: "404",
         component: () => import("@/components/PageNotFound.vue"),
-      }
+      },
     ],
   },
 ];

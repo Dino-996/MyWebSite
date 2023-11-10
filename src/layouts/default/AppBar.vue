@@ -22,7 +22,7 @@
     </template>
 
     <v-app-bar-title class="title">
-      <v-avatar @click="onTop" size="33" class="mr-1">
+      <v-avatar size="33" class="mr-1">
         <v-img src="/src/assets/io.png" alt="avatar"></v-img>
       </v-avatar>
       Davide Sabia
@@ -30,10 +30,9 @@
     <div class="d-flex flex-row align-center" id="d-desk">
       <div class="ml-3">
         <v-btn
-          rounded="lg"
+          rounded="xl"
           :prepend-icon="'mdi-home'"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/')"
           >Home</v-btn
         >
@@ -41,10 +40,9 @@
       <v-divider vertical></v-divider>
       <div>
         <v-btn
-          rounded="lg"
+          rounded="xl"
           prepend-icon="mdi-account"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/chisono')"
           >Chi sono</v-btn
         >
@@ -52,10 +50,9 @@
       <v-divider vertical></v-divider>
       <div>
         <v-btn
-          rounded="lg"
+          rounded="xl"
           prepend-icon="mdi-arrow-projectile"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/progetti')"
           >Progetti</v-btn
         >
@@ -63,10 +60,9 @@
       <v-divider vertical></v-divider>
       <div>
         <v-btn
-          rounded="lg"
+          rounded="xl"
           prepend-icon="mdi-post"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/blog')"
           >Blog</v-btn
         >
@@ -74,10 +70,9 @@
       <v-divider vertical></v-divider>
       <div>
         <v-btn
-          rounded="lg"
+          rounded="xl"
           prepend-icon="mdi-book-open-blank-variant"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/contatti')"
           >Contatti</v-btn
         >
@@ -85,7 +80,7 @@
       <v-divider vertical></v-divider>
       <div>
         <v-btn
-          rounded="lg"
+          rounded="xl"
           v-on:click="download()"
           prepend-icon="mdi-note-text-outline"
           >Scarica CV</v-btn
@@ -104,11 +99,7 @@
   >
     <v-container>
       <v-list>
-        <v-btn
-          :prepend-icon="'mdi-home'"
-          variant="text"
-          v-on:click="onTop()"
-          @click="navigator('/')"
+        <v-btn :prepend-icon="'mdi-home'" variant="text" @click="navigator('/')"
           >Home</v-btn
         >
       </v-list>
@@ -116,7 +107,6 @@
         <v-btn
           prepend-icon="mdi-account"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/chisono')"
           >Chi sono</v-btn
         >
@@ -125,7 +115,6 @@
         <v-btn
           prepend-icon="mdi-arrow-projectile"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/progetti')"
           >Progetti</v-btn
         >
@@ -134,7 +123,6 @@
         <v-btn
           prepend-icon="mdi-post"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/blog')"
           >Blog</v-btn
         >
@@ -143,7 +131,6 @@
         <v-btn
           prepend-icon="mdi-book-open-blank-variant"
           variant="text"
-          v-on:click="onTop()"
           @click="navigator('/contatti')"
           >Contatti</v-btn
         >
@@ -179,13 +166,5 @@ function switchIcon(value: boolean, icon_1: string, icon_2: string): string {
     return icon_1;
   }
   return icon_2;
-}
-
-function onTop(): void {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
 }
 </script>
