@@ -54,8 +54,9 @@
       class="slide-in-left-to-rigth d-flex flex-wrap align-center justify-center mt-3"
     >
       <v-img
-        src="../assets/home/cv.png"
-        lazy-src="/src/assets/home/cv.png"
+        src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcv.png?alt=media&token=fd5a4fc4-108c-4160-a8f0-9fa699fd6c60"
+        lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcv.png?alt=media&token=fd5a4fc4-108c-4160-a8f0-9fa699fd6c60"
+        width="150"
         height="150"
       />
       <div>
@@ -95,16 +96,18 @@
         </div>
       </div>
       <v-img
-        src="../assets/home/project.png"
-        lazy-src="/src/assets/home/project.png"
+        src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fproject.png?alt=media&token=67e85210-2f8c-453a-8d60-264eba18c3e8"
+        lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fproject.png?alt=media&token=67e85210-2f8c-453a-8d60-264eba18c3e8"
+        width="150"
         height="150"
       />
     </div>
 
     <div class="slide-in-left-to-rigth d-flex flex-wrap align-center mt-3">
       <v-img
-        src="../assets/home/my.png"
-        lazy-src="/src/assets/home/my.png"
+        src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fmy.png?alt=media&token=d6f75299-acc0-4318-9974-0d5ce8511598"
+        lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fmy.png?alt=media&token=d6f75299-acc0-4318-9974-0d5ce8511598"
+        width="150"
         height="150"
       />
       <div>
