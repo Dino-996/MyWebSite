@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
+import { ReCaptchaV3Provider, initializeAppCheck } from "firebase/app-check";
+import { getPerformance } from "firebase/performance";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD27hiIqGEY-P1SZ1VWJdJsQPMohYJWFSg",
@@ -14,6 +16,11 @@ const firebaseConfig = {
 
 export const firebase = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(firebase);
+export const appChek = initializeAppCheck(firebase, {
+  provider: new ReCaptchaV3Provider("6LdlHgspAAAAAPg-acnoVfIDwxR9iLkcv9QuaQau"),
+  isTokenAutoRefreshEnabled: true,
+});
+export const perf = getPerformance(firebase);
 const firestore = getFirestore(firebase);
 
 export default firestore;

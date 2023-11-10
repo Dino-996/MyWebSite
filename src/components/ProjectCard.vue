@@ -58,7 +58,6 @@ defineProps({
   actionName: { type: String, default: "Action", require: true },
   actionEvent: {
     type: String,
-    default: "https://www.google.com",
     require: true,
   },
   route: { type: String, require: true },
