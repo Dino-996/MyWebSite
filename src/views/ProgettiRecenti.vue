@@ -32,7 +32,7 @@ const projects: Array<Project> = reactive([
     route:
       "https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fproject%2Fpuliservice_logo.png?alt=media&token=df72d0da-d368-4c20-8689-41d2b7be5978&_gl=1*1vx7n9n*_ga*OTI2ODQ3NzE4LjE2OTczMTA0MzM.*_ga_CW55HF8NVT*MTY5NzMxMDQzOS4xLjEuMTY5NzMxMDUyMC40My4wLjA.",
     actionName: "Source code",
-    actionEvent: "https:github.com/Dino-996/Puliservicesrls",
+    actionEvent: "https://github.com/Dino-996/Puliservicesrls",
   },
 ]);
 </script>
