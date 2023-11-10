@@ -17,8 +17,6 @@ pnpm-debug.log*
 .prettierrc
 .firebaserc
 firebase.json
-/src/plugins/firebase.ts
-/src/plugins/cors.json
 .vscode
 *.suo
 *.ntvs*
