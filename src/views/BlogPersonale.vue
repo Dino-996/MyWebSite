@@ -1,5 +1,4 @@
 <template>
-  <!-- ARTICOLI -->
   <v-container>
     <Articoli />
     <Articolo />

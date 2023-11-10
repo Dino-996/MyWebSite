@@ -38,7 +38,6 @@
     <v-card-actions class="align-left">
       <v-btn
         class="mb-3 mr-3 mt-3"
-        role="link"
         :href="actionEvent"
         target="_blank"
         append-icon="mdi-arrow-right-bottom"
