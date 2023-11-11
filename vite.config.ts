@@ -36,7 +36,7 @@ export default defineConfig({
     }),
     viteStaticCopy({
       targets:[{
-        src: "sitemap.xml",
+        src: "/sitemap.xml",
         dest: "dist"
       }]
     }),
@@ -56,7 +56,7 @@ export default defineConfig({
       plugins:[
         copy({
           targets: [{
-            src: "/Users/dino/Desktop/MyWebSite/sitemap.xml",
+            src: "/sitemap.xml",
             dest: "dist"
           }]
         })
