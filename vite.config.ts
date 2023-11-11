@@ -49,7 +49,7 @@ export default defineConfig({
       plugins:[
         copy({
           targets: [{
-            src: "sitemap.xml",
+            src: "/sitemap.xml",
             dest: "dist"
           }]
         })
