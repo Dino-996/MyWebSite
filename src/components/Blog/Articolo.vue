@@ -2,11 +2,7 @@
   <v-container>
     <div v-for="article in article_list" :key="article.id">
       <div v-if="isId(article.id.toString())">
-        <v-card
-          density="comfortable"
-          :prepend-avatar="article.avatar"
-          :title="article.title"
-        >
+        <v-card density="comfortable" :prepend-avatar="article.avatar" :title="article.title">
           <v-divider></v-divider>
           <v-card-item>
             <v-card-title>
@@ -14,24 +10,14 @@
             </v-card-title>
             <span>{{ article.date }}</span>
           </v-card-item>
-          <v-img
-            :lazy-src="article.preview"
-            :src="article.preview"
-            height="200px"
-            cover
-          >
+          <v-img :lazy-src="article.preview" :src="article.preview" height="200px" cover>
           </v-img>
           <v-card-item>
             <v-card-text>
               {{ article.text }}
             </v-card-text>
             <v-card-actions class="align-left">
-              <v-btn
-                append-icon="mdi-linkedin"
-                :href="article.link"
-                target="_blank"
-                >Leggi l'articolo completo</v-btn
-              >
+              <v-btn append-icon="mdi-linkedin" :href="article.link" target="_blank">Leggi l'articolo completo</v-btn>
             </v-card-actions>
           </v-card-item>
         </v-card>
