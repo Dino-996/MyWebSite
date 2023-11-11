@@ -2,6 +2,7 @@
 import vue from "@vitejs/plugin-vue";
 import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 import ViteFonts from "unplugin-fonts/vite";
+import { viteStaticCopy } from "vite-plugin-static-copy";
 
 // Utilities
 import { defineConfig } from "vite";
@@ -33,6 +34,12 @@ export default defineConfig({
         ],
       },
     }),
+    viteStaticCopy({
+      targets:[{
+        src: "sitemap.xml",
+        dest: "dist"
+      }]
+    }),
   ],
   define: { "process.env": {} },
   resolve: {
@@ -49,7 +56,7 @@ export default defineConfig({
       plugins:[
         copy({
           targets: [{
-            src: "/sitemap.xml",
+            src: "/Users/dino/Desktop/MyWebSite/sitemap.xml",
             dest: "dist"
           }]
         })
