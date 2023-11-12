@@ -71,6 +71,7 @@
             v-on:click="download()"
             title="Scarica CV"
             aria-valuetext="Scarica CV"
+            variant="text"
             >Scarica CV</v-btn
           >
         </div>

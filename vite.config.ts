@@ -7,7 +7,6 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 // Utilities
 import { defineConfig } from "vite";
 import { fileURLToPath, URL } from "node:url";
-import copy from "rollup-plugin-copy";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -51,16 +50,4 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  build: ({
-    rollupOptions: {
-      plugins:[
-        copy({
-          targets: [{
-            src: "sitemap.xml",
-            dest: "dist"
-          }]
-        })
-      ]
-    }
-  }),
 });
