@@ -37,7 +37,7 @@ export default defineConfig({
     viteStaticCopy({
       targets:[{
         src: "sitemap.xml",
-        dest: "sitemap"
+        dest: ""
       }]
     }),
   ],
