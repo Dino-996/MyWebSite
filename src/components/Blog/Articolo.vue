@@ -10,7 +10,7 @@
             </v-card-title>
             <span>{{ article.date }}</span>
           </v-card-item>
-          <v-img :lazy-src="article.preview" :src="article.preview" height="200px" cover>
+          <v-img :lazy-src="article.preview" :src="article.preview" cover>
           </v-img>
           <v-card-item>
             <v-card-text>

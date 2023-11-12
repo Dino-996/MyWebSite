@@ -13,29 +13,22 @@ import firestore from "@/plugins/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Article from "@/interface/Article";
 
-const article_list: Array<Article> = reactive([]);
+const state = reactive({
+  articles: [] as Article[],
+  itemsPerPage: 6,
+  currentPage: 1,
+});
 
 async function getArticles(): Promise<void> {
   const articles = await getDocs(collection(firestore, "articles"));
   articles.forEach((data) => {
     if (data.exists()) {
       const article = data.data() as Article;
-      const article_object = {
-        id: article.id,
-        title: article.title,
-        subtitle: article.subtitle,
-        preview: article.preview,
-        avatar: article.avatar,
-        text: article.text,
-        author: article.author,
-        date: article.date,
-        link: article.link,
-      };
-      article_list.push(article_object);
+      state.articles.push(article);
     }
   });
 }
 
 getArticles();
-provide("articoli", article_list);
+provide("state", state);
 </script>
