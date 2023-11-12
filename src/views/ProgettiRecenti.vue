@@ -1,19 +1,17 @@
 <template>
-  <div class="d-flex flex-wrap flex-row align-center justify-space-evenly">
-    <div v-for="project in projects" :key="project.id">
-      <project-card
-        :title="project.title"
-        :subtitle="project.subtitle"
-        :text="project.text"
-        :icon="project.icon"
-        :icon-color="project.iconColor"
-        :action-name="project.actionName"
-        :action-event="project.actionEvent"
-        :route="project.route"
-      >
-      </project-card>
+  <v-container>
+    <h2 class="text-h2">Progetti</h2>
+    <v-divider></v-divider>
+
+    <div class="d-flex flex-wrap flex-row align-center justify-space-evenly">
+      <div v-for="project in projects" :key="project.id">
+        <project-card :title="project.title" :subtitle="project.subtitle" :text="project.text" :icon="project.icon"
+          :icon-color="project.iconColor" :action-name="project.actionName" :action-event="project.actionEvent"
+          :route="project.route">
+        </project-card>
+      </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts" setup>

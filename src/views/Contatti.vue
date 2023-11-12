@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-wrap align-start justify-space-evenly">
     <v-container style="max-width: 850px">
-      <h1 class="text-h1 mb-3">Contatti</h1>
+      <h1 class="text-h2 mb-3">Contatti</h1>
       <v-card class="mx-auto pa-2">
         <v-list>
           <v-list-subheader>I miei riferimenti</v-list-subheader>
@@ -196,8 +196,7 @@ const contacts = reactive([
 const nameRules = [
   () => !!name.value || "Inserisci un nome",
   () => (name && name.value.length >= 3) || "Inserisci minimo 3 caratteri",
-  () =>
-    (name && name.value.length < 15) || "Puoi inserire massimo 15 caratteri",
+  () => (name && name.value.length < 15) || "Puoi inserire massimo 15 caratteri",
 ];
 
 const emailRules = [

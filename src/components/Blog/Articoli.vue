@@ -1,18 +1,19 @@
 <template>
   <v-container>
-    <h2 class="text-h2">Blog</h2>
+    <h2 class="text-h2">Articoli</h2>
     <v-divider></v-divider>
 
-   <div class="mt-5">
-    <v-text-field v-model="searchTerm" prepend-icon="mdi-magnify" label="Cerca per titolo" variant="underlined"
-      @input="searchByTitle"></v-text-field>
-   </div>
+      <div class="mt-5">
+        <v-text-field  v-model="searchTerm" prepend-icon="mdi-magnify" label="Cerca per titolo" variant="underlined" :rules="titleRules"
+          @input="searchByTitle"></v-text-field>
+      </div>
 
-    <v-radio-group v-model="sorted" inline>
-      <v-label>Ordina per</v-label>
-      <v-radio label="Articoli recenti" value="cre" @click="sortByDateCre"></v-radio>
-      <v-radio label="Articoli remoti" value="dec" @click="sortByDateDec"></v-radio>
-    </v-radio-group>
+      <div class="text-start">
+        <v-radio-group v-model="sorted" inline>
+          <v-radio label="Articoli remoti" value="cre" @click="sortByDateCre"></v-radio>
+          <v-radio label="Articoli recenti" value="dec" @click="sortByDateDec"></v-radio>
+        </v-radio-group>
+      </div>
 
     <div v-if="displayedArticles.length > 0" class="d-flex flex-row align-center justify-space-between flex-wrap">
       <v-card v-for="article in displayedArticles" :key="article.id" class="mt-3 ml-2 mb-3 mx-auto" max-width="344">
@@ -40,7 +41,7 @@
       </v-card>
     </div>
     <div v-else>
-      <p>Nessun articolo</p>
+      <p>Ops, sembra che non ci siano articoli che corrispondano al tuo titolo "{{ `${searchTerm}` }}".  Prova con un termine di ricerca diverso. </p>
     </div>
     <v-pagination v-model="state.currentPage" :length="totalPages" @input="loadArticles" rounded="circle"></v-pagination>
   </v-container>
@@ -50,8 +51,11 @@
 import { inject, reactive, computed, onMounted, watch, ref, watchEffect } from "vue";
 import Article from "@/interface/Article";
 
+const titleRules = [
+() => (searchTerm.value.length <= 30) || "Puoi inserire massimo 30 caratteri",
+];
+const searchTerm = ref<string>("");
 const sorted = ref<string>("cre");
-
 const state = inject("state", reactive({
   articles: [],
   itemsPerPage: 6,
@@ -77,7 +81,6 @@ watch(() => [state.articles.length, state.currentPage], () => {
   loadArticles();
 });
 
-// ORDINAMENTO
 const parseDateString = (dateString: string) => {
   const [day, month, year] = dateString.split('/').map(Number);
   return new Date(year, month - 1, day);
@@ -95,25 +98,20 @@ const sortByDateDec = () => {
   loadArticles();
 };
 
-// RICERCA PER TITOLO
-const searchTerm = ref<string>("");
-// Funzione per filtrare gli articoli in base al termine di ricerca
 const filterByTitle = (article: Article) => {
   return article.title.toLowerCase().includes(searchTerm.value.toLowerCase());
 };
-// Funzione per ottenere gli articoli filtrati in base al termine di ricerca
+
 const filteredArticles = computed(() => {
-  // Filtra gli articoli in base al termine di ricerca
   return state.articles.filter(filterByTitle);
 });
 
-// Imposta la variabile displayedArticles in base agli articoli filtrati
 watchEffect(() => {
   const startIndex = (state.currentPage - 1) * state.itemsPerPage;
   const endIndex = startIndex + state.itemsPerPage;
   displayedArticles.splice(0, displayedArticles.length, ...filteredArticles.value.slice(startIndex, endIndex));
 });
 const searchByTitle = () => {
-  loadArticles(); // Ricarica gli articoli dopo la ricerca
+  loadArticles();
 };
 </script>

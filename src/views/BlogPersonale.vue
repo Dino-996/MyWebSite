@@ -1,14 +1,13 @@
 <template>
   <v-container>
     <Articoli />
-    <Articolo />
+
   </v-container>
 </template>
 
 <script lang="ts" setup>
 import { provide, reactive } from "vue";
 import Articoli from "@/components/Blog/Articoli.vue";
-import Articolo from "@/components/Blog/Articolo.vue";
 import firestore from "@/plugins/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Article from "@/interface/Article";
