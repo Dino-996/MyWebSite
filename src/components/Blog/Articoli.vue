@@ -15,7 +15,7 @@
         </v-radio-group>
       </div>
 
-    <div v-if="displayedArticles.length > 0" class="d-flex flex-row align-center justify-space-between flex-wrap">
+    <v-container v-if="displayedArticles.length > 0" class="d-flex flex-row align-center justify-center flex-wrap">
       <v-card v-for="article in displayedArticles" :key="article.id" class="mt-3 ml-2 mb-3 mx-auto" max-width="344">
         <v-img :lazy-src="article.preview" :src="article.preview" height="200px" cover></v-img>
         <v-card-item>
@@ -34,15 +34,13 @@
           {{ article.subtitle }}
         </v-card-text>
         <v-card-actions class="align-left">
-          <v-btn append-icon="mdi-arrow-u-right-bottom" @click="
-            $router.push({ name: 'Articolo', params: { id: article.id } })
-            ">Leggi di più</v-btn>
+          <v-btn append-icon="mdi-arrow-u-right-bottom" @click="getArticle(article.id)">Leggi di pi&ugrave;</v-btn>
         </v-card-actions>
       </v-card>
-    </div>
-    <div v-else>
-      <p>Ops, sembra che non ci siano articoli che corrispondano al tuo titolo "{{ `${searchTerm}` }}".  Prova con un termine di ricerca diverso. </p>
-    </div>
+    </v-container>
+    <v-container v-else>
+      <p>Sembra che non ci siano articoli che corrispondano a "{{ `${searchTerm}` }}". Prova con un termine di ricerca diverso. </p>
+    </v-container>
     <v-pagination v-model="state.currentPage" :length="totalPages" @input="loadArticles" rounded="circle"></v-pagination>
   </v-container>
 </template>
@@ -50,10 +48,10 @@
 <script lang="ts" setup>
 import { inject, reactive, computed, onMounted, watch, ref, watchEffect } from "vue";
 import Article from "@/interface/Article";
+import router from "@/router";
+import onTop from "@/utils/onTop";
 
-const titleRules = [
-() => (searchTerm.value.length <= 30) || "Puoi inserire massimo 30 caratteri",
-];
+const titleRules = [() => (searchTerm.value.length <= 30) || "Puoi inserire massimo 30 caratteri"];
 const searchTerm = ref<string>("");
 const sorted = ref<string>("cre");
 const state = inject("state", reactive({
@@ -111,7 +109,13 @@ watchEffect(() => {
   const endIndex = startIndex + state.itemsPerPage;
   displayedArticles.splice(0, displayedArticles.length, ...filteredArticles.value.slice(startIndex, endIndex));
 });
+
 const searchByTitle = () => {
   loadArticles();
 };
+
+const getArticle = (articleId:string) => {
+  router.push({ name: 'Articolo', params: { id: articleId } })
+  onTop();
+}
 </script>
