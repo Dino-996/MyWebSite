@@ -91,6 +91,7 @@ const filtraArticolo = computed(() => {
       ? console.log(`Id articolo: ${article.id.toString()} - isId: ${isId(article.id.toString())}`)
       : testoArticolo.value = article.text;
   });
+<<<<<<< HEAD
   return testoArticolo.value.replace(/(Titolo|Sottotitolo|Paragrafo|Immagine|Link|Elenco|Citazione|Codice|Grassetto|Corsivo): (.*?)(?=(Titolo|Sottotitolo|Paragrafo|Immagine|Link|Elenco|Citazione|Codice|Grassetto|Corsivo):|$)/gs, (match, p1, p2) => {
     switch (p1) {
       case 'Titolo':
@@ -113,6 +114,38 @@ const filtraArticolo = computed(() => {
         return '<b style="font-size:17px">' + p2 + '</b>';
       case 'Corsivo':
         return '<i style="font-size:17px">' + p2 + '</i>';
+=======
+  return testoArticolo.value.replace(/(Titolo|Sottotitolo|Paragrafo|Immagine|Link|Elenco|Citazione|Codice|Grassetto|Corsivo|Video|Acapo): (.*?)(?=(Titolo|Sottotitolo|Paragrafo|Immagine|Link|Elenco|Citazione|Codice|Grassetto|Corsivo|Video|Acapo):|$)/gs, (match, p1, p2) => {
+    switch (p1) {
+      case 'Titolo':
+        return '<h1 style="margin-bottom:1em; line-height:1em; font-size: 2em;">' + p2 + '</h1>';
+      case 'Sottotitolo':
+        return '<h2 style="margin-bottom:1em; margin-top: 1em; font-size: 1.5em;">' + p2 + '</h2>';
+      case 'Paragrafo':
+        return '<p style="display: inline; font-size: 1em; clear: both; line-height: 1.5em;">' + p2 + '</p>';
+      case 'Immagine':
+        return '<img style="float:left; max-width: 100%; width: auto; margin:15px; object-fit: cover; object-position: bottom; border-radius: 10px" src="' + p2 + '" alt="illustration"></img>';
+      case 'Link':
+        return '<a style="font-size:1em; color: #000080;" href="' + p2 + '" target="_black">(link)</a>';
+      case 'Elenco':
+        return '<ul style="list-style-type: none; font-size: 1em;"><li style="padding-top:1em;">' + p2.split(',').join('</li><li>') + '</li></ul>';
+      case 'Citazione':
+        return '<blockquote style="font-size: 1em; color: #666;">' + p2 + '</blockquote>';
+      case 'Codice':
+        return `<pre style="margin-top:2em; background-color: #f0f0f0; border: 1px solid #ddd; border-left: 3px solid #000080; color: #666; page-break-inside: avoid; font-family: monospace; font-size: 1em; line-height: 1.6; margin-bottom: 1.6em; max-width: 100%; overflow: auto; padding: 1em 1.5em; display: block; word-wrap: break-word;">
+          <code style="background: none; border: 0; font-size: inherit; margin: 0; padding: 0; color: inherit; white-space: pre; word-break: normal;">
+            ${p2}
+          </code>
+        </pre>`;
+      case 'Grassetto':
+        return '<b style="font-size:1em">' + p2 + '</b>';
+      case 'Corsivo':
+        return '<i style="font-size:1em">' + p2 + '</i>';
+      case 'Video':
+        return '<iframe width="100%" height="auto" src="' + p2 + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      case 'Acapo':
+        return '<br>';
+>>>>>>> 6462578 (Minor bug fixes and improvements in layout and performance)
       default:
         return match; // se non corrisponde a nessuno dei casi sopra, restituisce il match originale
     }

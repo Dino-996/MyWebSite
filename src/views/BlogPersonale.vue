@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <h1 class="text-h2 mb-3">Articoli</h1>
+    <v-divider></v-divider>
+
     <Articoli />
 
   </v-container>

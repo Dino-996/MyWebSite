@@ -1,117 +1,36 @@
 <template>
+  <v-container>
+    <h1 class="text-h2 mb-3">Contatti</h1>
+    <v-divider></v-divider>
+  </v-container>
+
   <div class="d-flex flex-wrap align-start justify-space-evenly">
-    <v-container style="max-width: 850px">
-      <h1 class="text-h2 mb-3">Contatti</h1>
-      <v-card class="mx-auto pa-2">
-        <v-list>
-          <v-list-subheader>I miei riferimenti</v-list-subheader>
-          <v-list-item
-            v-for="contact in contacts"
-            :key="contact.id"
-            rounded="xl"
-          >
-            <template v-slot:title>
-              {{ contact.title }}
-            </template>
-            <template v-slot:subtitle>
-              <a
-                target="_blank"
-                :href="contact.reference"
-                aria-label="I miei riferimenti"
-                >{{ contact.subtitle }}</a
-              >
-            </template>
-            <template v-slot:prepend>
-              <v-icon :icon="contact.img" :color="contact.color"></v-icon>
-            </template>
-          </v-list-item>
-        </v-list>
-      </v-card>
-      <v-container>
-        <cite>
-          <p class="text-h4">
-            "L'unico modo per andare veloce è andare piano."
-          </p>
-        </cite>
-        <p>
-          - Robert C. Martin aka Uncle Bob (Sull'importanza della scrittura di
-          codice pulito)
-        </p>
-      </v-container>
-    </v-container>
     <v-container style="max-width: 850px" class="mb-3">
-      <v-card
-        title="Puoi contattarmi compilando il form"
-        variant="text"
-        class="pt-3 pl-3 pr-3 pb-3"
-        density="compact"
-        elevation="3"
-      >
+      <v-card title="Puoi contattarmi compilando il form" variant="text" class="pt-3 pl-3 pr-3 pb-3" density="compact"
+        elevation="0">
         <v-card-item>
           <v-form @submit.prevent role="form">
-            <v-text-field
-              type="text"
-              prependIcon="mdi-account"
-              variant="underlined"
-              label="Nome"
-              v-model="name"
-              :rules="nameRules"
-              counter="15"
-              required
-              aria-label="Inserisci il tuo nome"
-            ></v-text-field>
-            <v-text-field
-              type="email"
-              prependIcon="mdi-email"
-              variant="underlined"
-              label="Email"
-              v-model="email"
-              :rules="emailRules"
-              required
-              aria-label="inserisci la tua email"
-            ></v-text-field>
-            <v-textarea
-              type="textarea"
-              prependIcon="mdi-message"
-              label="Messaggio"
-              variant="underlined"
-              counter="225"
-              rows="2"
-              row-height="15"
-              auto-grow
-              v-model="textBox"
-              :rules="textBoxRules"
-              required
-              clearable
-              aria-label="Inserisci un messaggio"
-            ></v-textarea>
+            <v-text-field type="text" prependIcon="mdi-account" variant="underlined" label="Nome" v-model="name"
+              :rules="nameRules" counter="15" required aria-label="Inserisci il tuo nome"></v-text-field>
+            <v-text-field type="email" prependIcon="mdi-email" variant="underlined" label="Email" v-model="email"
+              :rules="emailRules" required aria-label="inserisci la tua email"></v-text-field>
+            <v-textarea type="textarea" prependIcon="mdi-message" label="Messaggio" variant="underlined" counter="225"
+              rows="2" row-height="15" auto-grow v-model="textBox" :rules="textBoxRules" required clearable
+              aria-label="Inserisci un messaggio"></v-textarea>
             <v-container fluid>
-              <v-checkbox
-                type="checkbox"
-                :rules="checkboxRules"
-                v-model="checkbox"
-                color="gray"
-                required
-                aria-required="true"
-              >
+              <v-checkbox type="checkbox" :rules="checkboxRules" v-model="checkbox" color="gray" required
+                aria-required="true">
                 <template v-slot:label>
-                  <div>
-                    Acconsento al trattamento dei dati come specificato
-                    nell'informativa
+                  <span>
+                    Acconsento al trattamento dei dati come specificato nell'informativa
                     <v-tooltip location="bottom">
                       <template v-slot:activator="{ props }">
-                        <a
-                          color="yellow"
-                          target="_blank"
-                          href="https://www.iubenda.com/privacy-policy/83244684"
-                          v-bind="props"
-                          @click.stop
-                          >Privacy Policy</a
-                        >
+                        <a color="yellow" target="_blank" href="https://www.iubenda.com/privacy-policy/83244684"
+                          v-bind="props" @click.stop>Privacy Policy</a>
                       </template>
                       Leggi l'informativa Privacy Policy
                     </v-tooltip>
-                  </div>
+                  </span>
                 </template>
               </v-checkbox>
             </v-container>
@@ -120,24 +39,11 @@
               <v-progress-linear indeterminate></v-progress-linear>
             </v-container>
             <div class="align-left">
-              <v-btn
-                class="mt-2 mr-3"
-                variant="text"
-                @click="reset"
-                role="button"
-                aria-controls="Reset form"
-                >Resetta form</v-btn
-              >
+              <v-btn class="mt-2 mr-3" variant="text" @click="reset" role="button" aria-controls="Reset form">Resetta
+                form</v-btn>
               <span>
-                <v-btn
-                  type="submit"
-                  class="mt-2"
-                  variant="text"
-                  @click="sendEmail"
-                  role="button"
-                  aria-controls="Invia"
-                  >Invia</v-btn
-                >
+                <v-btn type="submit" class="mt-2" variant="text" @click="sendEmail" role="button"
+                  aria-controls="Invia">Invia</v-btn>
               </span>
             </div>
           </v-form>

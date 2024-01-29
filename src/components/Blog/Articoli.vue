@@ -1,7 +1,5 @@
 <template>
   <v-container>
-    <h2 class="text-h2">Articoli</h2>
-    <v-divider></v-divider>
 
       <div class="mt-5">
         <v-text-field  v-model="searchTerm" prepend-icon="mdi-magnify" label="Cerca per titolo" variant="underlined" :rules="titleRules"

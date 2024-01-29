@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h2 class="text-h2">Progetti</h2>
+    <h1 class="text-h2 mb-3">Progetti</h1>
     <v-divider></v-divider>
 
     <div class="d-flex flex-wrap flex-row align-center justify-space-evenly">

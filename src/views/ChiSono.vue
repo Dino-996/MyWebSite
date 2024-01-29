@@ -1,13 +1,13 @@
 <template>
   <v-container>
-    <div>
-      <text-design
-        title="Su di me"
-        text="Studio Informatica presso l'Università degli Studi della Basilicata qui a Potenza. Ho da sempre una forte passione e curiosità per il mondo tech, con una particolare attenzione verso la programmazione in generale. Bevo tanto caffé ☕."
-      />
-    </div>
+    <h1 class="text-h2 mb-3">Su di me</h1>
+    <v-divider></v-divider>
+    <br>
+    <p>Studio Informatica presso l'Università degli Studi della Basilicata qui a Potenza. Ho da sempre una forte passione e curiosità per il mondo tech, con una particolare attenzione verso la programmazione in generale. Bevo tanto caffé ☕.</p>
+    <br>
 
     <div class="d-flex flex-wrap justify-space-between">
+
       <div>
         <p class="text-h4">Lavori occasionali</p>
         <time-line
@@ -31,7 +31,7 @@
         />
       </div>
 
-      <div class="mt-4">
+      <div>
         <p class="text-h4">Istruzione</p>
         <time-line
           v-for="education in educations"
@@ -51,7 +51,7 @@
         />
       </div>
 
-      <div class="mt-4">
+      <div>
         <p class="text-h4">Certificazioni</p>
         <time-line
           v-for="certificate in certification"
@@ -73,16 +73,16 @@
           :button-img="certificate.buttonImg"
         />
       </div>
+
     </div>
   </v-container>
 </template>
 
 <script lang="ts" setup>
 import TimeLine from "@/components/TimeLine.vue";
-import TextDesign from "@/components/TextDesign.vue";
 import { reactive } from "vue";
 
-let works = reactive([
+const works = reactive([
   {
     id: 0,
     title: "Web Application",
@@ -103,7 +103,7 @@ let works = reactive([
   },
 ]);
 
-let educations = reactive([
+const educations = reactive([
   {
     id: 0,
     title: "Laurea Triennale",
@@ -121,7 +121,7 @@ let educations = reactive([
   },
 ]);
 
-let certification = reactive([
+const certification = reactive([
   {
     id: 0,
     title: "Cybersecurity Fundamentals",
