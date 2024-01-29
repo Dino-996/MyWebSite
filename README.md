@@ -16,7 +16,7 @@ Il sito offre diverse funzionalità, tra cui:
 - Visualizzare gli articoli che scrivo e pubblico sporadicamente su LinkedIn
 - Form di contatto
 
-## Contattaci
+## Contattami
 
 Se hai domande, suggerimenti o hai bisogno di assistenza, non esitare a contattarmi. Puoi farlo tramite:
 
