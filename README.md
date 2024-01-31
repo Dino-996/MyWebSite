@@ -12,14 +12,14 @@ Sul mio sito web troverai articoli e guide informativi sullo sviluppo web, le ul
 
 Il sito offre diverse funzionalità, tra cui:
 
-- Scaricare il mio CV
-- Visualizzare gli articoli che scrivo e pubblico sporadicamente su LinkedIn
-- Form di contatto
+-   Scaricare il mio CV
+-   Visualizzare gli articoli che scrivo e pubblico sporadicamente su LinkedIn
+-   Form di contatto
 
 ## Contattami
 
 Se hai domande, suggerimenti o hai bisogno di assistenza, non esitare a contattarmi. Puoi farlo tramite:
 
-- Email: davidesabia22@gmail.com
+-   Email: davidesabia22@gmail.com
 
 Happy browsing!
