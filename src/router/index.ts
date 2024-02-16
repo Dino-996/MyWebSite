@@ -22,11 +22,6 @@ const routes = [
                 component: () => import('@/views/ProgettiRecenti.vue'),
             },
             {
-                path: '/contatti',
-                name: 'Contatti',
-                component: () => import('@/views/Contatti.vue'),
-            },
-            {
                 path: '/blog',
                 name: 'Blog',
                 component: () => import('@/views/BlogPersonale.vue'),

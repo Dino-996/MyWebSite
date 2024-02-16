@@ -2,8 +2,8 @@ import firebase from '@/plugins/firebase'
 import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 
 function download() {
-    const storage = getStorage(firebase.firebase)
-    const starsRef = ref(storage, 'assets/cv.png')
+    const storage = getStorage(firebase.app)
+    const starsRef = ref(storage, 'assets/io.ico')
 
     getDownloadURL(starsRef)
         .then((url) => {

@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <h1 class="text-h2 mb-3">Articoli</h1>
+        <h1 class="text-h2 mb-3">Blog</h1>
         <v-divider></v-divider>
 
         <Articoli />

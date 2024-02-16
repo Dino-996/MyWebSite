@@ -1,138 +1,115 @@
 <template>
-    <v-container>
-        <div class="d-flex justify-start align-center">
-            <div>
-                <h1 class="text-h1 slide-in-rigth-to-left">Ehil&agrave;</h1>
-            </div>
-            <div class="slide-in-left-to-rigth">
-                <v-img
-                    src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fwaving.png?alt=media&token=a70578e5-1fd0-41bd-b49f-7757a9e522f5&_gl=1*1hz6e1*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzY2MS41OC4wLjA."
-                    lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fwaving.png?alt=media&token=a70578e5-1fd0-41bd-b49f-7757a9e522f5&_gl=1*1hz6e1*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzY2MS41OC4wLjA."
-                    height="150"
-                    width="100"
-                    alt="penguin"
-                    id="block-penguin"
-                />
-            </div>
+  <v-container>
+
+    <v-container class="bg-transparent d-flex flex-column align-center rounded-xl">
+
+      <v-card class="d-flex mb-5" elevation="0" color="transparent" rounded="xl">
+        <div class="d-flex align-center">
+          <v-avatar color="transparent" size="150" class="mr-3">
+            <v-img cover
+              src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2FdavideSabia.webp?alt=media&token=f68f0435-8038-4cd6-b19e-abb2d65e37e1"
+              lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2FdavideSabia.webp?alt=media&token=f68f0435-8038-4cd6-b19e-abb2d65e37e1"
+              alt="Davide Sabia"></v-img>
+          </v-avatar>
+          <div class="text-center">
+            <h1 class="text-h3 mb-0">Davide Sabia</h1>
+            <h2 class="text-h5">front-end developer</h2>
+          </div>
         </div>
+      </v-card>
 
-        <br />
+      <div class="d-flex flex-wrap justify-center mb-5">
 
-        <type-writer text="Benvenuto!" number="10" />
+        <v-icon size="48" color="primary">mdi-code-array</v-icon>
+        <v-icon size="48" color="primary">mdi-web</v-icon>
+        <v-icon size="48" color="primary">mdi-database</v-icon>
+        <v-icon size="48" color="primary">mdi-penguin</v-icon>
 
-        <div class="slide-in-rigth-to-left mt-3">
-            <text-design
-                title="La passione per lo sviluppo software ci accomuna?"
-                text="Ti invito a fare un salto nel mio blog. Lì troverai articoli, tutorial e riflessioni su argomenti affascinanti nel mondo dello sviluppo, dell'informatica e molto altro. Non vedo l'ora di condividere con te ancora più contenuti interessanti. Ti aspetto nel mio blog!"
-                btn="Visita il blog"
-            />
-            <div class="align-left">
-                <v-btn
-                    class="mr-3 mb-5"
-                    append-icon="mdi-arrow-u-right-bottom"
-                    variant="text"
-                    v-on:click="navigator('/blog')"
-                    >Visita il blog</v-btn
-                >
-            </div>
-        </div>
+      </div>
 
-        <div>
-            <carousel-slides
-                slide-one="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fhtml-5.png?alt=media&token=a51e10e8-ca2f-47b6-95d8-5a432b57f17c&_gl=1*1l23c5x*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzMzMi42MC4wLjA."
-                slide-two="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fcss-3.png?alt=media&token=8619abbd-b465-451b-99f1-90f984580566&_gl=1*cj3o54*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzE5MS42MC4wLjA."
-                slide-three="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fjs.png?alt=media&token=b072e53c-955d-4c6a-b9e3-8d07aeedae82&_gl=1*8lup75*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzM4Ny41LjAuMA."
-                slide-four="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fnode-js.png?alt=media&token=6d8423a5-7896-45f3-9f81-7b51f63b82cd&_gl=1*x52icd*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzQ2Ny42MC4wLjA."
-                slide-five="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fnpm.png?alt=media&token=e38f5853-12a8-4997-9d6a-103fc3ca0ce8&_gl=1*7krz8i*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzUwMy4yNC4wLjA."
-                slide-six="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Ftypescript.png?alt=media&token=93bf3ae9-e026-4464-b54a-d81fbad55a35&_gl=1*e9v2ml*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzUzNC42MC4wLjA."
-                slide-seven="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fvisual-studio.png?alt=media&token=a51d4147-f0e1-4c6e-bfe3-9e089a2de8f6&_gl=1*1avogbm*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzU5MS4zLjAuMA.."
-                slide-eight="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fjava.png?alt=media&token=6e28dfc1-f257-41ad-93c4-7ae3f8c7dd7b&_gl=1*1yosu4*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzYxNi4zOC4wLjA."
-            />
-        </div>
+      <div class="d-flex flex-wrap align-center justify-center ml-3">
 
-        <div
-            class="slide-in-left-to-rigth d-flex flex-wrap align-center justify-center mt-3"
-        >
-            <v-img
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcv.png?alt=media&token=fd5a4fc4-108c-4160-a8f0-9fa699fd6c60"
-                lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcv.png?alt=media&token=fd5a4fc4-108c-4160-a8f0-9fa699fd6c60"
-                width="150"
-                height="150"
-            />
-            <div>
-                <text-design
-                    title="Curriculum Vitae"
-                    text="Mi piace creare esperienze online accattivanti. Puoi consultare il mio CV per sapere di piu sulle mie esperienze e competenze."
-                />
-                <div class="align-left">
-                    <v-btn
-                        class="mr-3 mb-5"
-                        append-icon="mdi-download"
-                        v-on:click="download()"
-                        title="Scarica CV"
-                        aria-valuetext="Scarica CV"
-                        variant="text"
-                        >Scarica CV</v-btn
-                    >
-                </div>
-            </div>
-        </div>
+        <v-card class="mb-5 mr-3" rounded="xl" elevation="0" variant="outlined">
 
-        <div
-            class="slide-in-rigth-to-left d-flex flex-wrap-reverse align-center justify-center mt-3"
-        >
-            <div>
-                <text-design
-                    title="Progetti"
-                    text="Troverai esempi di lavori che mi hanno riempito di orgoglio e spero che ti ispirino per il tuo progetto."
-                />
-                <div class="align-left">
-                    <v-btn
-                        class="mr-3 mb-5"
-                        append-icon="mdi-arrow-u-right-bottom"
-                        v-on:click="navigator('/progetti')"
-                        variant="text"
-                        >Vai ai progetti</v-btn
-                    >
-                </div>
-            </div>
-            <v-img
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fproject.png?alt=media&token=67e85210-2f8c-453a-8d60-264eba18c3e8"
-                lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fproject.png?alt=media&token=67e85210-2f8c-453a-8d60-264eba18c3e8"
-                width="150"
-                height="150"
-            />
-        </div>
+          <v-card-title class="visible_overflow">Software e progetti</v-card-title>
 
-        <div class="slide-in-left-to-rigth d-flex flex-wrap align-center mt-3">
-            <v-img
-                src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fmy.png?alt=media&token=d6f75299-acc0-4318-9974-0d5ce8511598"
-                lazy-src="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fmy.png?alt=media&token=d6f75299-acc0-4318-9974-0d5ce8511598"
-                width="150"
-                height="150"
-            />
-            <div>
-                <text-design
-                    title="Chi sono"
-                    text="Mi metto in gioco, sperimento nuove idee e affronto le sfide con fiducia. Puoi scoprire di più su di me visitando la sezione Chi sono."
-                />
-                <div class="align-left">
-                    <v-btn
-                        class="mr-3 mb-5"
-                        append-icon="mdi-arrow-u-right-bottom"
-                        v-on:click="navigator('/chisono')"
-                        variant="text"
-                        >Scopri di più</v-btn
-                    >
-                </div>
-            </div>
-        </div>
+          <v-card-text>Progetti open source, app web, desktop e tante sperimentazioni.</v-card-text>
+
+          <v-card-actions class="align-left">
+            <v-btn class="text-subtitle-2 align-left" append-icon="mdi-arrow-u-right-bottom" size="small" variant="text"
+              @click="navigator('progetti')">I miei progetti</v-btn>
+          </v-card-actions>
+
+        </v-card>
+
+        <v-card class="mb-5" rounded="xl" elevation="0" variant="outlined">
+
+          <v-card-title>Scrivo, a volte</v-card-title>
+          <v-card-text>Scrivo di design,
+            sviluppo frontend,
+            apprendimento e tanto altro.
+          </v-card-text>
+
+          <v-card-actions class="align-left">
+            <v-btn class="text-subtitle-2" append-icon="mdi-arrow-u-right-bottom" size="small" variant="text"
+              @click="navigator('blog')">I miei articoli</v-btn>
+          </v-card-actions>
+
+        </v-card>
+
+      </div>
+
+      <div class="d-flex flex-wrap justify-center mt-5">
+
+        <v-btn class="mx-2" icon small color="primary" variant="text" role="link" target="_blank"
+          href="https://it.linkedin.com/in/davidesabia">
+          <v-icon>mdi-linkedin</v-icon>
+        </v-btn>
+
+        <v-btn class="mx-2" icon small color="primary" variant="text" role="link" target="_blank"
+          href="https://github.com/Dino-996">
+          <v-icon>mdi-github</v-icon>
+        </v-btn>
+
+        <v-btn class="mx-2" icon small color="primary" variant="text" role="link" target="_blank"
+          href="mailto:davidesabia22@gmail.com?subject=Ciao Davide! Ti contatto dopo aver visitato il tuo sito web&body=Messaggio dello sviluppatore: Cercherò di risponderti quanto prima :)">
+          <v-icon>mdi-email</v-icon>
+        </v-btn>
+
+      </div>
     </v-container>
+  </v-container>
+
+  <carousel-slides
+    slide-one="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fhtml-5.png?alt=media&token=a51e10e8-ca2f-47b6-95d8-5a432b57f17c&_gl=1*1l23c5x*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzMzMi42MC4wLjA."
+    slide-two="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fcss-3.png?alt=media&token=8619abbd-b465-451b-99f1-90f984580566&_gl=1*cj3o54*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzE5MS42MC4wLjA."
+    slide-three="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fjs.png?alt=media&token=b072e53c-955d-4c6a-b9e3-8d07aeedae82&_gl=1*8lup75*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzM4Ny41LjAuMA."
+    slide-four="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fnode-js.png?alt=media&token=6d8423a5-7896-45f3-9f81-7b51f63b82cd&_gl=1*x52icd*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzQ2Ny42MC4wLjA."
+    slide-five="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fnpm.png?alt=media&token=e38f5853-12a8-4997-9d6a-103fc3ca0ce8&_gl=1*7krz8i*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzUwMy4yNC4wLjA."
+    slide-six="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Ftypescript.png?alt=media&token=93bf3ae9-e026-4464-b54a-d81fbad55a35&_gl=1*e9v2ml*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzUzNC42MC4wLjA."
+    slide-seven="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fvisual-studio.png?alt=media&token=a51d4147-f0e1-4c6e-bfe3-9e089a2de8f6&_gl=1*1avogbm*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzU5MS4zLjAuMA.."
+    slide-eight="https://firebasestorage.googleapis.com/v0/b/portfolio-davide-sabia.appspot.com/o/assets%2Fcarousel%2Fjava.png?alt=media&token=6e28dfc1-f257-41ad-93c4-7ae3f8c7dd7b&_gl=1*1yosu4*_ga*ODc4NzIxNDgzLjE2OTU1ODUwMjk.*_ga_CW55HF8NVT*MTY5NTg0Mjg2MS40LjEuMTY5NTg0MzYxNi4zOC4wLjA." />
+
+  <v-container>
+    <v-container class="bg-primary text-secondary rounded-xl">
+      <v-card class="text-h2 mb-2 bg-transparent text-secondary" elevation="0" color="transparent">
+        <v-card-title>
+          <span class="text-h2">Negli anni,</span>
+        </v-card-title>
+        <v-card-text class="text-subtitle-1">
+          ho creato prodotti per imprese della mia città, dai siti Web di
+          marketing a soluzioni complesse e app
+          aziendali con particolare attenzione a esperienze utente veloci, eleganti e accessibili.
+        </v-card-text>
+      </v-card>
+      <Contatti />
+    </v-container>
+  </v-container>
+
 </template>
 
 <script lang="ts" setup>
-import CarouselSlides from '@/components/CarouselSlides.vue'
-import TypeWriter from '@/components/TypeWriter.vue'
-import download from '@/utils/download'
-import navigator from '@/utils/navigator'
+import CarouselSlides from '@/components/CarouselSlides.vue';
+import Contatti from '@/components/Contatti.vue';
+import navigator from '@/utils/navigator';
 </script>

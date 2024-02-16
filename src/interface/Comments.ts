@@ -1,9 +1,11 @@
 interface Comments {
     id: number
-    name: string
+    uid: string | null
+    commentId: number
+    name: string | null
     text: string
     date: number
-    src: string
+    src: string | null
 }
 
 export default Comments

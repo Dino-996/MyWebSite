@@ -5,7 +5,10 @@
         "useDefineForClassFields": true,
         "module": "ESNext",
         "moduleResolution": "Node",
+        "allowImportingTsExtensions": true,
         "strict": true,
+        "allowJs": true,
+        "checkJs": true,
         "jsx": "preserve",
         "resolveJsonModule": true,
         "isolatedModules": true,
@@ -16,6 +19,9 @@
         "paths": {
             "@/*": ["src/*"]
         }
+    },
+    "vueCompilerOptions": {
+        "target": 3.3
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
     "references": [{ "path": "./tsconfig.node.json" }],

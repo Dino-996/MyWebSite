@@ -1,3 +1,27 @@
+// Typography
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+$body-font-family: 'Nunito Sans';
+$heading-font-family: 'Nunito Sans';
+
+.v-application {
+    font-family: $body-font-family,
+    sans-serif !important;
+}
+
+.text-h1, .text-h2, .text-h3, .text-h4, .text-h5, .text-h6, .text-subtitle-1, .text-subtitle-2 {
+    font-family: $heading-font-family, 
+    sans-serif !important;
+}
+
+.title {
+    flex-grow: 10;
+    color: var(--text-reverse);
+    text-overflow: show;
+}
+
+// Media query
+
 @media screen and (min-width: 1045px) {
     #d-smart {
         display: none !important;
@@ -9,6 +33,8 @@
         display: none !important;
     }
 }
+
+// Keyframes
 
 @keyframes slide-in-rigth-to-left {
     from {
@@ -93,6 +119,8 @@
     animation-fill-mode: both;
 }
 
+// Other
+
 a {
     text-decoration: none;
     color: #1295d2;
@@ -102,22 +130,28 @@ a:hover {
     color: #74b8d8;
 }
 
+a:visited {
+    color: #2117af;
+}
+
 .align-left {
     display: flex;
     flex-direction: row;
     justify-content: end;
 }
 
-.title {
-    flex-grow: 10;
-    color: var(--text-reverse);
-    text-overflow: show;
-}
-
-#block-penguin {
-    display: block !important;
+.align-text-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .pointer {
     cursor: pointer;
+}
+
+.visible_overflow {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
 }
