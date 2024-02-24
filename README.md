@@ -21,6 +21,6 @@ Il sito offre diverse funzionalità, tra cui:
 
 Se hai domande, suggerimenti o hai bisogno di assistenza, non esitare a contattarmi. 
 Puoi farlo tramite:
--   Email: davidesabia22@gmail.com
+-   E-mail: davidesabia22@gmail.com
 
 Happy browsing!
